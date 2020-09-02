@@ -12,7 +12,7 @@ if(isset($_POST['forgot'])){
             $mission=mysqli_query($conn,"SELECT `password` FROM users WHERE email='$email'");
             $row = mysqli_fetch_row($mission);
             $savedPass=$row[0];
-            $subject = 'Your password for Fliptask';
+            $subject = 'Your password for KS Meet';
 
             require 'PHPMailerAutoload.php';
 
@@ -32,7 +32,7 @@ if(isset($_POST['forgot'])){
 
             $mail->isHTML(true);  // Set email format to HTML
 
-            $bodyContent = "Your password for FlipTask is: ".$savedPass;
+            $bodyContent = "Your password for KS Meet is: ".$savedPass;
 
             $mail->Subject = $subject;
             $mail->Body    = $bodyContent;
